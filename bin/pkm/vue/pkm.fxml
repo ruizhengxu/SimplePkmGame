@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkm.controller.PkmController">
+   <children>
+      <AnchorPane prefHeight="300.0" prefWidth="800.0">
+         <children>
+            <ImageView fitHeight="360.0" fitWidth="600.0" layoutX="-50.0" layoutY="-65.0" pickOnBounds="true" preserveRatio="true" x="50.0" y="5.0">
+               <image>
+                  <Image url="@../../../res/battleBackground.png" />
+               </image>
+            </ImageView>
+            <GridPane fx:id="gridPaneCombat" prefHeight="300.0" prefWidth="600.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fx:id="imgViewPkmSvg" fitHeight="154.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../../../res/gengarGif.gif" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane prefHeight="150.0" prefWidth="300.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Label fx:id="lblNomPkmSvg" layoutX="14.0" layoutY="35.0" prefHeight="17.0" prefWidth="125.0" text="Label" textFill="WHITE" />
+                        <Label fx:id="lblNivPkmSvg" layoutX="167.0" layoutY="35.0" text="Label" textFill="WHITE" />
+                        <Label fx:id="lblHPPkmSvg" layoutX="187.0" layoutY="71.0" text="Label" textFill="WHITE" />
+                        <Label fx:id="lblHPResPkmSvg" layoutX="157.0" layoutY="71.0" text="Label" textFill="WHITE" />
+                        <Rectangle fx:id="hpBarFixed" arcHeight="5.0" arcWidth="5.0" height="15.0" layoutX="14.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <Rectangle fx:id="hpBarPkmSvg" arcHeight="5.0" arcWidth="5.0" fill="LIME" height="15.0" layoutX="14.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <Text fill="WHITE" layoutX="181.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/" />
+                        <Text fill="WHITE" layoutX="142.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nv." />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fx:id="imgViewPkmPlayer" fitHeight="201.0" fitWidth="250.0" layoutX="25.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../res/nidoking.gif" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label fx:id="lblNomPkmPlayer" layoutX="51.0" layoutY="49.0" prefHeight="17.0" prefWidth="125.0" text="Label" textFill="WHITE" />
+                        <Rectangle fx:id="hpBarFixed1" arcHeight="5.0" arcWidth="5.0" height="15.0" layoutX="51.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <Rectangle fx:id="hpBarPkmPlayer" arcHeight="5.0" arcWidth="5.0" fill="LIME" height="15.0" layoutX="51.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                        <Label fx:id="lblNivPkmPlayer" layoutX="208.0" layoutY="49.0" text="Label" textFill="WHITE" />
+                        <Text fill="WHITE" layoutX="183.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nv." />
+                        <Label fx:id="lblHPPkmPlayer" layoutX="218.0" layoutY="84.0" text="Label" textFill="WHITE" />
+                        <Label fx:id="lblHPResPkmPlayer" layoutX="188.0" layoutY="84.0" text="Label" textFill="WHITE" />
+                        <Text fill="WHITE" layoutX="212.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <HBox fx:id="hbox" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <TextArea fx:id="ta" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="350.0" />
+            <GridPane id="gridPaneChoix" fx:id="gridPaneChoix" prefWidth="250.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btnItem" mnemonicParsing="false" onAction="#utiliseItem" prefHeight="50.0" prefWidth="125.0" text="Items" GridPane.rowIndex="1" />
+                  <Button fx:id="btnPkm" mnemonicParsing="false" onAction="#changePkm" prefHeight="50.0" prefWidth="125.0" text="Pokemon" GridPane.columnIndex="1" />
+                  <Button fx:id="btnAttaque" mnemonicParsing="false" onAction="#choisirAttaques" prefHeight="50.0" prefWidth="125.0" text="Attaque" />
+                  <Button fx:id="btnFuite" mnemonicParsing="false" onAction="#fuite" prefHeight="50.0" prefWidth="125.0" text="Fuite" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
